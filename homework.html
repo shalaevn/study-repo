@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Задания на JS</title>
+</head>
+<script type="text/javascript">
+	//банковская программа
+	var deposit = parseFloat(prompt("Введите сумму вклада"));
+	var persent = parseFloat(prompt("Введите процентную ставку вклада"))/100;
+	for (var i = 0; i < 5; i++) {
+		deposit += deposit*persent;
+		alert("За " + (i+1) + " год хранения сумма счета будет " + deposit.toFixed(2));
+	}
+
+
+	//угадай число
+	var answer = parseInt(Math.random() * 100);
+	i = 1;
+	while (true) {
+		var userAnswer = prompt("Угадайте число от 0 до 100. Ходит игрок№" + i + ". Для выхода введите \"q\".");
+		if (userAnswer == "q") {
+			break;
+		}
+		userAnswer = parseInt(userAnswer);
+		if (userAnswer < answer){
+			alert ("Загаданное число больше.");
+		} else if (userAnswer > answer) {
+			alert ("Загаданное число меньше.");
+		} else if (userAnswer == answer) {
+			alert ("Игрок№" + i + " победил!");
+			break;
+		} else {
+			alert("Необходимо ввести число.");
+			i++;
+		}
+		if (i == 1) i++;
+		else i = 1;
+	}
+</script>
+<body>
+
+</body>
+</html>
